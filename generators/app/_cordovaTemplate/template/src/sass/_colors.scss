@@ -1,0 +1,23 @@
+$black: #3a4745;
+$red: #eb4c4b;
+$darkRed: #e63c3b;
+$green:  #6bb331;
+$darkGreen:  #5ba627;
+$blue: #6b96b1;
+$darkBlue: #628da9;
+$purple: #9a6a82;
+$white: #e4decf;
+$orange: #feb017;
+$darkOrange: #fea513;
+$lightRed: #fdaabc;
+$facebookBlue: #3B5998;
+
+
+$whiteButtonGradient: linear-gradient(135deg, white 50%, #eee 50%);
+$greenButtonGradient: linear-gradient(135deg, $green 50%, $darkGreen 50%);
+$blueButtonGradient: linear-gradient(135deg, $blue 50%, $darkBlue 50%);
+$yellowButtonGradient: linear-gradient(135deg, $orange 50%, $darkOrange 50%);
+
+$redButtonGradient: linear-gradient(135deg, $red 50%, $darkRed 50%);
+
+$bodyBackground: linear-gradient(0deg, white, #eee);

@@ -1,0 +1,64 @@
+{
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "serve-local": "vue-cli-service serve --mode local",
+    "serve-staging": "vue-cli-service serve --mode staging",
+    "build-local": "vue-cli-service build --mode local && cordova prepare",
+    "build-dev": "sync-cordova-app-version && vue-cli-service build --mode development && cordova prepare",
+    "build-staging": "sync-cordova-app-version && vue-cli-service build --mode staging && cordova prepare",
+    "build-prod": "sync-cordova-app-version prod && vue-cli-service build && cordova prepare",
+    "release-staging": "sync-cordova-app-version vue-cli-service build --mode staging && cordova build android --release -- --storePassword=$KEYSTORE_PWD --password=$KEYSTORE_PWD --gradleArg=-PcdvMinSdkVersion=19",
+    "release-prod": "sync-cordova-app-version prod && vue-cli-service build && cordova build android --release -- --storePassword=$KEYSTORE_PWD --password=$KEYSTORE_PWD --gradleArg=-PcdvMinSdkVersion=19",
+    "android": "cordova run android --device -- --gradleArg=-PcdvMinSdkVersion=19"
+  },
+  "dependencies": {
+    "branch-cordova-sdk": "^3.1.5",
+    "cordova-android": "^6.4.0",
+    "cordova-browser": "^5.0.4",
+    "cordova-ios": "^5.0.0",
+    "cordova-plugin-cocoapod-support": "^1.6.0",
+    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-globalization": "^1.11.0",
+    "cordova-plugin-inappbrowser": "^3.0.0",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-wkwebview-engine": "^1.1.4",
+    "cordova-plugin-wkwebviewxhrfix": "git+https://github.com/TheMattRay/cordova-plugin-wkwebviewxhrfix.git",
+    "es6-promise-plugin": "^4.2.2",
+    "vue": "^2.5.17",
+    "vue-modal-dialogs": "^3.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.1",
+    "@vue/cli-service": "^3.4.1",
+    "animejs": "^3.0.1",
+    "axios": "^0.19.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "underscore": "^1.9.1",
+    "vue-moment": "^4.0.0",
+    "vue-template-compiler": "^2.5.17",
+    "vue2-animate": "^2.1.0",
+    "vuex-persistedstate": "^2.5.4",
+    "worker-loader": "^2.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-wkwebview-engine": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-wkwebviewxhrfix": {}
+    },
+    "platforms": [
+      "browser",
+      "ios",
+      "android"
+    ]
+  }
+}
