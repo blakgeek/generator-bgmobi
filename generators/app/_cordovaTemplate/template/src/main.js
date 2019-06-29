@@ -5,9 +5,9 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import {ApiPlugin} from "@/services/api.service";
 import * as ModalDialogs from 'vue-modal-dialogs'
-// import Dialogs from '@/plugins/dialogs.plugin';
-// import config from '@/config';
+import config from '@/config';
 
 if (window.cordova) {
     document.addEventListener('deviceready', init);
@@ -23,6 +23,8 @@ function init() {
 
     }
 
+    Vue.prototype.$config = config;
+    Vue.use(ApiPlugin);
     Vue.use(ModalDialogs);
     Vue.config.productionTip = false;
 

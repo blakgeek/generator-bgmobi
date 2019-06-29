@@ -5,18 +5,13 @@
   "keywords": [
     "yeoman-generator"
   ],
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "Carlos \"blakgeek\" Lawton",
+  "license": "MIT",
   "dependencies": {
     "cordova-lib": "^9.0.1",
     "yeoman-generator": "^4.0.1"
   },
   "files": [
-    "app",
-    "screen"
+    "generators"
   ]
 }

@@ -4,13 +4,13 @@ import config from '@/config';
 const http = axios.create();
 const authToken = localStorage.getItem('authToken');
 
-http.defaults.baseURL = config.apiBaseUrl
+http.defaults.baseURL = config.apiBaseUrl;
 
 if (authToken) {
     http.defaults.headers.common.Authorization = `Bearer ${authToken}`;
 }
 
-export default {
+const service = {
 
     updateAuthToken(token = false) {
         if (token) {
@@ -22,9 +22,9 @@ export default {
     getUser(username) {
         return http.get(`/users/${username}`).then(getData).catch(onError);
     },
-}
+};
 
-export class NetworkError extends Error {}
+class NetworkError extends Error {}
 
 function getData(resp) {
     return resp.data;
@@ -44,3 +44,16 @@ function onError(err) {
         };
     }
 }
+
+const ApiPlugin = {
+
+    install(Vue) {
+        Vue.prototype.$api = service;
+    }
+};
+
+export {
+    service as default,
+    NetworkError,
+    ApiPlugin
+};
